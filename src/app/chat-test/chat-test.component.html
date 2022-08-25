@@ -1,0 +1,11 @@
+<h1>Welcome {{username}} !</h1>
+<input #chat>
+<button (click)="add_to_chat(chat.value)">Send Text</button>
+{{all_chats}}
+<br>
+
+<div *ngFor="let c of x">
+  <div>{{c.username}} : {{c.chat}}</div>
+</div>
+<br>
+
