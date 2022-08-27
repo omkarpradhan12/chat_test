@@ -1,20 +1,22 @@
 
 <mat-drawer-container class="example-container">
-  <h1 style="text-align: center; color:black;">Welcome {{username}} !</h1>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <h1 style="color: black;">Welcome to Chat {{username}} !</h1>
+  <h1 style="text-align: center; color:black;">Welcome {{username}} ! </h1>
+  <mat-drawer #drawer class="example-sidenav" mode="over" hasBackdrop="true">
+    <h1 style="color: black;">Welcome to Chat {{username}} ! <button mat-fab color="warn" (click)="drawer.toggle()">
+      <mat-icon>navigate_before</mat-icon>
+        </button></h1>
     <hr>
     <div>
       <div *ngFor="let c of x" >
 
-        <div [ngClass]="{'s1':username==c.username,'s2':username!=c.username}"><b>{{c.username}}</b> : <label>{{c.chat}}</label></div>
+        <div  [ngClass]="{'s1':username==c.username,'s2':username!=c.username}"><b>{{c.username}}</b> : <label>{{c.chat}}</label></div>
         <br>
 
       </div>
       <br>
-      <div class="sendmsg">
-      <input #chat style="width: max;" placeholder="Enter your text.....">
-        <button (click)="add_to_chat(chat.value)">Send Text</button>
+      <div class="sendmsg" tabindex="1" style="outline: none;">
+      <input #chat style="width: max;" placeholder="Enter your text....." onfocus="this.value=''">
+        <button (click)="add_to_chat(chat.value)" ><mat-icon>send</mat-icon></button>
       </div>
       </div>
   </mat-drawer>

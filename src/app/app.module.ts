@@ -10,6 +10,7 @@ import { ChatTestComponent } from './chat-test/chat-test.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
 
 
 let firebaseConfig = {
@@ -32,7 +33,9 @@ let firebaseConfig = {
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     BrowserAnimationsModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatIconModule
+
 
   ],
   providers: [],
