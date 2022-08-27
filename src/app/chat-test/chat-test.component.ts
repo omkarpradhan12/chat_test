@@ -27,6 +27,7 @@ export class ChatTestComponent{
 
   }
 
+
   username:any= ""
   ngOnInit()
   {
@@ -48,9 +49,13 @@ export class ChatTestComponent{
 
   database = getDatabase(this.app);
 
+
+  showFiller = false;
+
+
   add_to_chat(chat:string)
   {
-    let p = "asd"
+
     this.all_chats.push(chat);
     let postref = ref(this.database,"Chats/");
     let newpostref = push(postref);

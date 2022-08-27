@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChatTestComponent } from './chat-test/chat-test.component';
 import { LoginComponent } from './login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 let firebaseConfig = {
@@ -28,7 +30,9 @@ let firebaseConfig = {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    BrowserAnimationsModule,
+    MatSidenavModule
 
   ],
   providers: [],
