@@ -1,5 +1,72 @@
 <h1>Welcome {{username}} !</h1>
-<input #chat>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<div class="container">
+	<div class="row">
+	<div class="col-md-8">
+		   <div class="message-box">
+		     <div class="head-box-1">
+
+			   <ul class="msg-box list-inline text-left d-inline-block float-left">
+			    <li> <i class="fas fa-arrow-left" id="back"></i> </li>
+				  <li> <img src="https://i.ibb.co/fCzfFJw/person.jpg" alt="" width="40px"> <span> Welcome to the Group Chat {{username}} !</span> <br>  </li>
+			   </ul>
+			</div>
+
+      <div class="msg_history">
+        <div *ngFor="let c of x">
+        <div class="incoming_msg" *ngIf="c.username!=username">
+          <div class="received_msg">
+            <div class="received_withd_msg">
+              <p>{{c.chat}}</p>
+              <span class="time_date"> <b>{{c.username}}</b></span></div>
+          </div>
+        </div>
+        <div class="outgoing_msg" *ngIf="c.username==username">
+          <div class="sent_msg">
+            <p>{{c.chat}}</p>
+            <span class="time_date"> <b>{{c.username}}</b></span></div>
+        </div>
+      </div>
+      </div>
+  <div class="video_box" id="video_section">
+     <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+             <div class="video-chat-top">
+                 <div class="video_section">
+                     <img src="https://i.ibb.co/2vtJ3XR/user.png" height="280px" width="280px"/>
+                 </div>
+                 <div class="video_chat_box">
+                 <ul>
+                     <li><i class="fa fa-phone" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-phone close_video_chat" aria-hidden="true"></i></li>
+                     <li><i class="fa fa-microphone-slash" aria-hidden="true"></i></li>
+
+                 </ul>
+             </div>
+             </div>
+
+         </div>
+     </div>
+  </div>
+
+      <div class="send-message">
+			  <form action="" method="">
+			      <input type="text" class="form-control" name="" valu="" id="" placeholder="Type your message here ..." #chat/>
+
+			    <ul class="list-inline">
+				  <li> <button class="fas fa-paper-plane" (click)="add_to_chat(chat.value)"></button> </li>
+				</ul>
+			  </form>
+			</div>
+
+
+		   </div>
+		 </div>
+	</div>
+</div>
+
+
 <button (click)="add_to_chat(chat.value)">Send Text</button>
 {{all_chats}}
 <br>
@@ -8,4 +75,5 @@
   <div>{{c.username}} : {{c.chat}}</div>
 </div>
 <br>
+
 
