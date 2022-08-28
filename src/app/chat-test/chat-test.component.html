@@ -1,7 +1,7 @@
 
 <mat-drawer-container class="example-container">
   <h1 style="text-align: center; color:black;">Welcome {{username}} ! </h1>
-  <mat-drawer #drawer class="example-sidenav" mode="over" hasBackdrop="true" onfocus="this.style.position='absolute'">
+  <mat-drawer #drawer class="example-sidenav" mode="over" hasBackdrop="true">
     <h1 style="color: black; position:fixed; background-color:#c1e8ff;">Welcome to Chat {{username}} ! <span style="padding-left:20px"></span><button mat-fab class="backfab" (click)="drawer.toggle()">
 
       <mat-icon>navigate_before</mat-icon>
