@@ -43,14 +43,14 @@
   vertical-align: middle;
   margin: 5px 10px 5px 0;
   padding: 10px;
-  width: fit-content;
+  width: 80%;
   background-color: #fff;
   border: 1px solid #ddd;
 }
 
 .sendmsg button {
   padding: 10px 20px;
-  background-color: dodgerblue;
+  background-color: rgb(30, 143, 255);
   border: 1px solid #ddd;
   color: white;
 }
@@ -76,10 +76,42 @@
 
 .example-sidenav {
   padding: 20px;
+  width: 30%;
   background-color: #c1e8ff;
+  height: 100%;
 }
 
 .menutog
 {
   margin: -25px 0 0 -36px;
+}
+
+.hed{
+  color: black;
+  text-align: center;
+  size: large;
+   position:fixed;
+   background-color:#c1e8ff;
+   border-bottom: 1px solid black;
+}
+
+.msgbox
+{
+  overflow-y: scroll;
+  height: 90%;
+  display:flex;
+  flex-direction:column-reverse;
+
+}
+
+::-webkit-scrollbar
+{
+  width: 1px;
+}
+
+.backfab
+{
+  border-radius: 20px;
+  border: 1px;
+  float: right;
 }

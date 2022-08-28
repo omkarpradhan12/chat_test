@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { initializeApp } from 'firebase/app';
 import {getDatabase, ref, set,push, onValue,onChildAdded} from 'firebase/database'
@@ -9,6 +9,9 @@ import {getDatabase, ref, set,push, onValue,onChildAdded} from 'firebase/databas
   styleUrls: ['./chat-test.component.css']
 })
 export class ChatTestComponent{
+
+
+  @ViewChild('chat') chat_line :ElementRef;
 
   title = 'chat_test';
   all_chats:any = [];
@@ -67,7 +70,7 @@ export class ChatTestComponent{
 
     )
 
-
+    this.chat_line.nativeElement.value='';
     const starCountRef = ref(this.database, '/Chats');
     onValue(starCountRef, (snapshot) => {
       this.x=[]
