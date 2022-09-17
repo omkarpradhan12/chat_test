@@ -16,6 +16,6 @@ constructor (private Router:Router)
 
 take_me_to_chats(username:string)
 {
-  this.Router.navigate(["/chat"],{ queryParams: { user: username } })
+  this.Router.navigate(["/home"],{ queryParams: { user: username } })
 }
 }

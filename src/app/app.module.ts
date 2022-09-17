@@ -11,6 +11,12 @@ import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { HomepageComponent } from './homepage/homepage.component';
+import { ScrollToBottomDirective } from './directives/scroll-to-bottom.directive';
+
+
 
 
 let firebaseConfig = {
@@ -27,6 +33,8 @@ let firebaseConfig = {
     AppComponent,
     ChatTestComponent,
     LoginComponent,
+    HomepageComponent,
+    ScrollToBottomDirective,
   ],
   imports: [
     BrowserModule,
@@ -34,8 +42,9 @@ let firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     BrowserAnimationsModule,
     MatSidenavModule,
-    MatIconModule
-
+    MatIconModule,
+    MatToolbarModule,
+    MatExpansionModule,
 
   ],
   providers: [],

@@ -1,5 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, ElementRef, ViewChild, Input } from '@angular/core';
 import { initializeApp } from 'firebase/app';
 import {getDatabase, ref, set,push, onValue,onChildAdded} from 'firebase/database'
 
@@ -10,6 +9,7 @@ import {getDatabase, ref, set,push, onValue,onChildAdded} from 'firebase/databas
 })
 export class ChatTestComponent{
 
+  @Input() username:any = "";
 
   @ViewChild('chat') chat_line :ElementRef;
 
@@ -25,17 +25,15 @@ export class ChatTestComponent{
     dataBaseURL:"https://chat-test-76af5-default-rtdb.firebaseio.com/"
   }
 
-  constructor(private route:ActivatedRoute)
+  constructor()
   {
 
   }
 
-
-  username:any= ""
+  public sh:any;
   ngOnInit()
   {
-    this.route.queryParamMap.subscribe(params => this.username = params.get("user"));
-
+    this.sh = window.innerHeight;
     const starCountRef = ref(this.database, '/Chats');
     onValue(starCountRef, (snapshot) => {
       this.x=[]
@@ -62,6 +60,13 @@ export class ChatTestComponent{
     this.all_chats.push(chat);
     let postref = ref(this.database,"Chats/");
     let newpostref = push(postref);
+
+    if (chat=='')
+    {
+      alert("Trying to send empty text!")
+    }
+    else
+    {
     set(
       newpostref,{
         "username":this.username,
@@ -80,7 +85,7 @@ export class ChatTestComponent{
       })
     });
   }
-
+  }
 
 
   ngOnChanges()
@@ -94,4 +99,7 @@ export class ChatTestComponent{
       })
     });
   }
+
+
+
 }
